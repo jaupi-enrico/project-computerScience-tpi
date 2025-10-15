@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventi a Brescia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .search-bar {
+      background-color: #1b1b1b;
+      border-radius: 2rem;
+      padding: .5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin: 1rem auto;
+      max-width: 90%;
+    }
+
+    .search-bar input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #ccc;
+      width: 100%;
+    }
+
+    .card {
+      background-color: #1b1b1b;
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .card img {
+      height: 150px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 0.8rem 1rem;
+    }
+
+    .event-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .event-info {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .event-price {
+      color: #e0e0e0;
+      font-weight: 500;
+      margin-top: .3rem;
+    }
+
+    .bottom-nav {
+      background-color: #1b1b1b;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: .5rem 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: .8rem;
+    }
+
+    .bottom-nav a.active, .bottom-nav a:hover {
+      color: #fff;
+    }
+
+    .icon-btn {
+      border: none;
+      background: none;
+      color: #ccc;
+    }
+
+    .icon-btn:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra di ricerca -->
+  <div class="search-bar mt-3">
+    <i class="bi bi-search"></i>
+    <input type="text" placeholder="Scopri cose da fare a Brescia">
+    <i class="bi bi-geo-alt"></i>
+  </div>
+
+  <div class="container mt-3 mb-5">
+
+    <!-- Evento 1 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=60" alt="Stand Up">
+      <div class="card-body d-flex justify-content-between align-items-start">
+        <div>
+          <div class="event-title">BRESCIA – Stand Up Comedy</div>
+          <div class="event-info">Gio 19 ott – 22:00 · Teatro Clerici</div>
+          <div class="event-price">€9,90</div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <button class="icon-btn"><i class="bi bi-share"></i></button>
+          <button class="icon-btn"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evento 2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=60" alt="Dance Dance MOP">
+      <div class="card-body d-flex justify-content-between align-items-start">
+        <div>
+          <div class="event-title">DANCE DANCE – MOP</div>
+          <div class="event-info">Sab 20 ott – 23:00 · MOP</div>
+          <div class="event-price">€15</div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <button class="icon-btn"><i class="bi bi-share"></i></button>
+          <button class="icon-btn"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evento 3 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604948501466-4e9f96e777a1?auto=format&fit=crop&w=900&q=60" alt="Tennis">
+      <div class="card-body d-flex justify-content-between align-items-start">
+        <div>
+          <div class="event-title">BS OPEN – Il tennis bresciano doc</div>
+          <div class="event-info">Mar 23 ott – 11:00 · Palazzetto di BS</div>
+          <div class="event-price">€14,40</div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <button class="icon-btn"><i class="bi bi-share"></i></button>
+          <button class="icon-btn"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navbar inferiore -->
+  <nav class="bottom-nav">
+    <a href="/"><i class="bi bi-house-door-fill"></i><span>scopri</span></a>
+    <a href="/favorite"><i class="bi bi-heart"></i><span>preferiti</span></a>
+    <a href="/ticket" class="active"><i class="bi bi-ticket-perforated"></i><span>biglietti</span></a>
+    <a href="/account"><i class="bi bi-person"></i><span>account</span></a>
+  </nav>
+
+</body>
+</html>
