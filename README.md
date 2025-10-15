@@ -65,7 +65,7 @@ project-computerScience-tpi/
 
 - **Figma** – UI/UX design and interactive prototypes  
 - **Markdown** – Documentation formatting  
-- **Google Drive / Docs** – Collaboration and reports  
+- **Microsoft teams / Docs** – Collaboration and reports  
 - **GitHub** – Version control and project presentation  
 - *(Optional)* Visual Studio Code – for code simulation structure  
 
