@@ -25,7 +25,6 @@ Although no functional code is included, the project follows the same organizati
 
 Key features (conceptual):
 - Event creation and browsing  
-- Ticket reservation simulation  
 - User authentication and profile management (concept design)  
 - Responsive UI design for web and mobile  
 
@@ -76,7 +75,7 @@ project-computerScience-tpi/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/project-computerScience-tpi.git
+   git clone https://github.com/jaupi-enrico/project-computerScience-tpi.git
    ```
 2. Explore the `/docs` and `/design` folders to view the project documentation and UI prototypes.  
 3. Open the included Figma links or `.fig` files to explore the full interface design.  
@@ -105,10 +104,10 @@ project-computerScience-tpi/
 
 ## 👨‍💻 Author
 
-**Jaupi Enrico**
-**Gaburri Samuele**
-**Albo Davide**
-**Musaku Kevin**
+**Jaupi Enrico**,
+**Gaburri Samuele**,
+**Albo Davide**,
+**Musaku Kevin**,
 **Topala Ignat**
 📍 ITIS Castelli – Informatics Department  
 📧 [dev.enricojaupi@gmail.com]  
