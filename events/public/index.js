@@ -15,6 +15,10 @@ async function generateEvents() {
       const card = document.createElement('div');
       card.classList.add('col');
 
+      card.addEventListener('click', () => {
+        window.location.href = `/event/${event.id}`;
+      });
+
       const heartIcon = event.favorite ? 'bi-heart-fill text-danger' : 'bi-heart';
 
       card.innerHTML = `

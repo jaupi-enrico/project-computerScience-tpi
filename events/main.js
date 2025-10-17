@@ -90,4 +90,38 @@ app.post("/api/favorite", (req, res) => {
   });
 });
 
+// Route per la pagina dell'evento
+app.get("/event/:id", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "detail.html"));
+});
+
+// Route per ottenere i dati JSON dell'evento
+app.get("/api/event/:id", (req, res) => {
+  const filePath = path.join(__dirname, "event.json");
+
+  fs.readFile(filePath, "utf-8", (err, data) => {
+    if (err) {
+      console.error("Errore durante la lettura di event.json:", err);
+      return res.status(500).json({ error: "Errore nel server" });
+    }
+
+    try {
+      const jsonData = JSON.parse(data);
+      const eventId = req.params.id;
+
+      // Trova l'evento con l'ID corrispondente (se i tuoi eventi hanno un campo id)
+      const event = jsonData.find(e => e.id === eventId);
+
+      if (!event) {
+        return res.status(404).json({ error: "Evento non trovato" });
+      }
+
+      res.json(event);
+    } catch (parseError) {
+      console.error("Errore nel parsing del JSON:", parseError);
+      res.status(500).json({ error: "JSON non valido" });
+    }
+  });
+});
+
 app.listen(3000, () => console.log("Server avviato su http://localhost:3000"));
