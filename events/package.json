@@ -2,6 +2,7 @@
   "name": "events_app",
   "version": "1.0.0",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "run": "node main.js"
   },

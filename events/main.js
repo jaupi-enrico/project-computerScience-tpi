@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
@@ -39,6 +40,49 @@ app.get("/api/event", (req, res) => {
     try {
       const jsonData = JSON.parse(data);
       res.json(jsonData); // Manda il JSON al client
+    } catch (parseError) {
+      console.error("Errore nel parsing del JSON:", parseError);
+      res.status(500).json({ error: "JSON non valido" });
+    }
+  });
+});
+
+app.post("/api/favorite", (req, res) => {
+  const filePath = path.join(__dirname, "event.json");
+  const { id } = req.body; // prendi i dati dal body
+
+  if (typeof id === "undefined") {
+    return res.status(400).json({ error: "Dati mancanti (id)" });
+  }
+
+  fs.readFile(filePath, "utf-8", (err, data) => {
+    if (err) {
+      console.error("Errore durante la lettura di event.json:", err);
+      return res.status(500).json({ error: "Errore nel server" });
+    }
+
+    try {
+      const events = JSON.parse(data);
+
+      // Trova l'evento con l'id corrispondente
+      const eventIndex = events.findIndex(e => e.id === id);
+
+      if (eventIndex === -1) {
+        return res.status(404).json({ error: "Evento non trovato" });
+      }
+
+      // Aggiorna il campo favorite (lo inverte o lo imposta al valore passato)
+      events[eventIndex].favorite = !events[eventIndex].favorite;
+
+      // Scrivi di nuovo nel file
+      fs.writeFile(filePath, JSON.stringify(events, null, 2), err => {
+        if (err) {
+          console.error("Errore durante la scrittura di event.json:", err);
+          return res.status(500).json({ error: "Errore nel salvataggio" });
+        }
+
+        res.json({ message: "Evento aggiornato correttamente", event: events[eventIndex] });
+      });
     } catch (parseError) {
       console.error("Errore nel parsing del JSON:", parseError);
       res.status(500).json({ error: "JSON non valido" });
