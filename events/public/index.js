@@ -16,7 +16,7 @@ async function generateEvents() {
       card.classList.add('col');
 
       card.addEventListener('click', () => {
-        window.location.href = `/event/${event.id}`;
+        window.location.href = `/event?id=${event.id}`;
       });
 
       const heartIcon = event.favorite ? 'bi-heart-fill text-danger' : 'bi-heart';

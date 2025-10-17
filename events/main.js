@@ -90,8 +90,51 @@ app.post("/api/favorite", (req, res) => {
   });
 });
 
+app.post("/api/buy", (req, res) => {
+  const filePath = path.join(__dirname, "event.json");
+  const { id } = req.body; // prendi i dati dal body
+
+  if (typeof id === "undefined") {
+    return res.status(400).json({ error: "Dati mancanti (id)" });
+  }
+
+  fs.readFile(filePath, "utf-8", (err, data) => {
+    if (err) {
+      console.error("Errore durante la lettura di event.json:", err);
+      return res.status(500).json({ error: "Errore nel server" });
+    }
+
+    try {
+      const events = JSON.parse(data);
+
+      // Trova l'evento con l'id corrispondente
+      const eventIndex = events.findIndex(e => e.id == id);
+
+      if (eventIndex === -1) {
+        return res.status(404).json({ error: "Evento non trovato" });
+      }
+
+      // Aggiorna il campo favorite (lo inverte o lo imposta al valore passato)
+      events[eventIndex].bought = true;
+
+      // Scrivi di nuovo nel file
+      fs.writeFile(filePath, JSON.stringify(events, null, 2), err => {
+        if (err) {
+          console.error("Errore durante la scrittura di event.json:", err);
+          return res.status(500).json({ error: "Errore nel salvataggio" });
+        }
+
+        res.json({ message: "Evento aggiornato correttamente", event: events[eventIndex] });
+      });
+    } catch (parseError) {
+      console.error("Errore nel parsing del JSON:", parseError);
+      res.status(500).json({ error: "JSON non valido" });
+    }
+  });
+});
+
 // Route per la pagina dell'evento
-app.get("/event/:id", (req, res) => {
+app.get("/event", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "detail.html"));
 });
 
@@ -110,7 +153,7 @@ app.get("/api/event/:id", (req, res) => {
       const eventId = req.params.id;
 
       // Trova l'evento con l'ID corrispondente (se i tuoi eventi hanno un campo id)
-      const event = jsonData.find(e => e.id === eventId);
+      const event = jsonData.find(e => e.id == eventId);
 
       if (!event) {
         return res.status(404).json({ error: "Evento non trovato" });

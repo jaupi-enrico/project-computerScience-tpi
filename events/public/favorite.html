@@ -110,10 +110,19 @@
 <body>
 
   <!-- 🔎 Barra di ricerca -->
-  <div class="search-bar mt-3">
-    <i class="bi bi-search"></i>
-    <input type="text" placeholder="Scopri cose da fare a Brescia">
-    <i class="bi bi-geo-alt"></i>
+  <div class="search-bar mt-3 d-flex align-items-center px-3 py-2 rounded-pill bg-dark mx-auto" style="max-width: 90%;">
+    <!-- Icona di ricerca -->
+    <i class="bi bi-search me-2 text-secondary"></i>
+
+    <!-- Input testo -->
+    <input type="text" class="form-control bg-transparent border-0 text-light" 
+          placeholder="Scopri cose da fare a Brescia" />
+
+    <!-- Icone cliccabili -->
+    <div class="ms-2 d-flex gap-3">
+      <a href="/setting" class="bi bi-sliders text-light text-decoration-none fs-5"></a>
+      <a href="/map" class="bi bi-geo-alt text-light text-decoration-none fs-5"></a>
+    </div>
   </div>
 
   <!-- 📅 Container eventi -->
