@@ -167,4 +167,8 @@ app.get("/api/event/:id", (req, res) => {
   });
 });
 
+app.get("/map", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "map.html"));
+});
+
 app.listen(3000, () => console.log("Server avviato su http://localhost:3000"));
