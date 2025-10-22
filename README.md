@@ -32,7 +32,7 @@ Key features:
 
 ## 🧩 Key Learning Points
 
-- Structuring a **professional IT project** repository  
+- Structuring a **professional IT project** repository
 - Documenting requirements, design choices, and workflows  
 - Designing realistic UI/UX prototypes in **Figma**  
 - Using GitHub as a professional presentation platform  
@@ -110,11 +110,12 @@ project-computerScience-tpi/
 
 ## 👨‍💻 Author
 
-**Jaupi Enrico**
-**Gaburri Samuele**,
-**Albo Davide**,
-**Musaku Kevin**,
-**Topala Ignat**
+- **Jaupi Enrico** = Main Developer, Software Architect, Github holder
+- **Gaburri Samuele** = Project manager and UI design helper
+- **Albo Davide** = UI/UX designer
+- **Musaku Kevin** = Main Analyst
+- **Topala Ignat** = Analyst
+
 📍 ITIS Castelli – Informatics Department  
 📧 [dev.enricojaupi@gmail.com]  
 
