@@ -120,7 +120,7 @@ project-computerScience-tpi/
 | **Samuele Gaburri** | Project Manager & UI Designer |
 | **Davide Albo** | UI/UX Designer |
 | **Kevin Musaku** | Main Analyst |
-| **Ignat Topala** | Analyst |
+| **Ignat Topala** | Side-Analyst |
 
 📍 ITIS Castelli – Informatics Department  
 📧 [dev.enricojaupi@gmail.com]  
