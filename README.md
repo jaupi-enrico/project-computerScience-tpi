@@ -47,14 +47,19 @@ project-computerScience-tpi/
 ├── docs/                # Reports, project specifications, diagrams
 │   ├── requirements.docx  # Functional and technical requirements
 │   ├── design-notes.docx  # Initial notes from talking to the client
-│   └── report.docx       # Final report (if applicable)
+│   └── report.docx       # Final report
 ├── design/              # Figma exports and assets
 │   ├── wireframes/      
 │   ├── prototypes/
 │   └── styleguide/
-├── assets/              # Images, logos, and media
-├── src/                 # Placeholder for code structure (non-functional)
-├── .gitignore           
+├── src/                 # Code structure
+│   ├── node_modules/  # Includes all node modules that the app uses for the app without an internet connection
+│   ├── public/  # HTML and JS files + Icon
+│   ├── event.json # Database of all the events
+│   ├── package-lock.json
+│   ├── package.json # Details of the project
+│   └── main.js       # Nodejs file to start the node server
+├── LICENSE           
 └── README.md            # This file
 ```
 
@@ -66,7 +71,7 @@ project-computerScience-tpi/
 - **Markdown** – Documentation formatting  
 - **Microsoft teams / Docs** – Collaboration and reports  
 - **GitHub** – Version control and project presentation  
-- *(Optional)* Visual Studio Code – for code simulation structure  
+- **Visual Studio Code** – for coding 
 
 ---
 
@@ -77,8 +82,10 @@ project-computerScience-tpi/
    git clone https://github.com/jaupi-enrico/project-computerScience-tpi.git
    ```
 2. Explore the `/docs` and `/design` folders to view the project documentation and UI prototypes.  
-3. Open the included Figma links or `.fig` files to explore the full interface design.  
-4. Use this repository as a **realistic reference** for structuring future TPI or software design projects.  
+3. Open the included Figma links or `.fig` files to explore the full interface design.
+4. Run the web server by running the command `node main.js` in the `/src` folder
+5. Connect to `http://localhost:3000/` to use the web app
+6. Use this repository as a **realistic reference** for structuring future TPI or software design projects.  
 
 ---
 
@@ -95,7 +102,7 @@ project-computerScience-tpi/
 ## 🎓 Educational Objectives
 
 - Learn how to structure and document a realistic software project  
-- Understand the stages of software design (from idea to mockup and wireframe)  
+- Understand the stages of software design (from idea to development)  
 - Gain experience in professional presentation and repository organization  
 - Apply TPI course concepts to a simulated real-world scenario  
 
@@ -103,7 +110,7 @@ project-computerScience-tpi/
 
 ## 👨‍💻 Author
 
-**Jaupi Enrico**,
+**Jaupi Enrico**
 **Gaburri Samuele**,
 **Albo Davide**,
 **Musaku Kevin**,
