@@ -20,10 +20,10 @@
     "price": "9,90",
     "imgUrl": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=60",
     "location": "Teatro Clerici",
-    "favorite": true,
+    "favorite": false,
     "bought": true,
-    "x":12,
-    "y":12
+    "x": 12,
+    "y": 12
   },
   {
     "id": 3,
@@ -36,8 +36,8 @@
     "location": "Teatro Clerici",
     "favorite": false,
     "bought": false,
-    "x":12,
-    "y":12
+    "x": 12,
+    "y": 12
   },
   {
     "id": 4,
@@ -50,7 +50,7 @@
     "location": "Teatro Clerici",
     "favorite": false,
     "bought": false,
-    "x":12,
-    "y":12
+    "x": 12,
+    "y": 12
   }
 ]

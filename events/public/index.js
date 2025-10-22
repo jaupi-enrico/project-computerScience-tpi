@@ -31,7 +31,7 @@ async function generateEvents() {
               <div class="event-price">${event.price}</div>
             </div>
             <div class="d-flex flex-column align-items-center">
-              <button class="icon-btn btn btn-light btn-sm mb-1" title="Condividi">
+              <button class="icon-btn btn btn-light btn-sm mb-1 share-btn" data-id="${event.id}" title="Condividi">
                 <i class="bi bi-share"></i>
               </button>
               <button class="icon-btn btn btn-light btn-sm favorite-btn" data-id="${event.id}" title="Preferito">
@@ -48,6 +48,9 @@ async function generateEvents() {
     // 🔹 Listener per i pulsanti "cuore"
     document.querySelectorAll('.favorite-btn').forEach(button => {
       button.addEventListener('click', async () => {
+        
+        event.stopPropagation();
+
         const id = parseInt(button.getAttribute('data-id'));
         const icon = button.querySelector('i');
 
@@ -60,9 +63,33 @@ async function generateEvents() {
           icon.classList.remove('bi-heart-fill', 'text-danger');
           icon.classList.add('bi-heart');
         }
+        
       });
     });
 
+    document.querySelectorAll('.share-btn').forEach(button => {
+      button.addEventListener('click', async (event) => {
+        event.stopPropagation(); // blocca il click sulla card
+
+        const id = parseInt(button.getAttribute('data-id'));
+        const url = `${window.location.origin}/event?id=${id}`;
+        const title = "Guarda questo evento!";
+        const text = "Dai un’occhiata a questo evento che potrebbe interessarti 👇";
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title, text, url });
+            console.log('Evento condiviso con successo');
+          } catch (err) {
+            console.warn('Condivisione annullata o non riuscita', err);
+          }
+        } else {
+          // Fallback → copia link negli appunti
+          await navigator.clipboard.writeText(url);
+          alert('🔗 Link copiato negli appunti!');
+        }
+      });
+    });
   } catch (err) {
     console.error('Errore nel caricamento degli eventi:', err);
     eventContainer.innerHTML = `
