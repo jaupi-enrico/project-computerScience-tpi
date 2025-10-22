@@ -8,8 +8,8 @@
     "price": "49,00",
     "imgUrl": "https://www.stateofmind.it/wp-content/uploads/2021/06/Concerti-live-e-musica-registrata-differenze-nel-coinvolgimento-del-pubblico.jpeg",
     "location": "Teatro Grande, Brescia",
-    "favorite": false,
-    "bought": false,
+    "favorite": true,
+    "bought": true,
     "x": 45.536909046134866,
     "y": 10.221034923849098
   },

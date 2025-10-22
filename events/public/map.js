@@ -18,15 +18,26 @@ async function loadEvents() {
     const lat = event.x || 45.5416;
     const lon = event.y || 10.2118;
 
-    // Popup con dettagli dell'evento
-    const popupContent = `
-        <strong>${event.title}</strong><br/>
-        ${event.date} - ${event.time}<br/>
-        ${event.location}<br/>
-        Prezzo: €${event.price}<br/>
-        ${event.favorite ? '❤️ Preferito' : ''}
-    `;
+    let popupContent;
 
+    if (event.price == "Gratis") {
+        // Popup con dettagli dell'evento
+        popupContent = `
+            <strong>${event.title}</strong><br/>
+            ${event.date} - ${event.time}<br/>
+            ${event.location}<br/>
+            Prezzo: ${event.price}<br/>
+            ${event.favorite ? '❤️ Preferito' : ''}
+        `;
+    } else {
+        popupContent = `
+            <strong>${event.title}</strong><br/>
+            ${event.date} - ${event.time}<br/>
+            ${event.location}<br/>
+            Prezzo: €${event.price}<br/>
+            ${event.favorite ? '❤️ Preferito' : ''}
+        `;
+    }
     // Marker sul posto
     L.marker([lat, lon])
         .addTo(map)
