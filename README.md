@@ -13,7 +13,7 @@ This repository was developed as an **educational exercise** to simulate the cre
 - Structuring deliverables and assets as if for a real client  
 - Applying professional development standards  
 
-Although no functional code is included, the project follows the same organization and documentation style used in real development workflows.
+The project follows the same organization and documentation style used in real development workflows.
 
 ---
 
@@ -23,10 +23,10 @@ Although no functional code is included, the project follows the same organizati
 **Type:** Web application  
 **Purpose:** To allow users to discover, organize, and manage local or global events through an intuitive digital platform.  
 
-Key features (conceptual):
+Key features:
 - Event creation and browsing  
 - User authentication and profile management (concept design)  
-- Responsive UI design for web and mobile  
+- Responsive UI design for web and mobile
 
 ---
 
@@ -45,10 +45,9 @@ Key features (conceptual):
 ```
 project-computerScience-tpi/
 ├── docs/                # Reports, project specifications, diagrams
-│   ├── requirements.md  # Functional and technical requirements
-│   ├── design-notes.md  # Design process and decisions
-│   ├── report.pdf       # Final report (if applicable)
-│   └── presentation.pptx# Project presentation
+│   ├── requirements.docx  # Functional and technical requirements
+│   ├── design-notes.docx  # Initial notes from talking to the client
+│   └── report.docx       # Final report (if applicable)
 ├── design/              # Figma exports and assets
 │   ├── wireframes/      
 │   ├── prototypes/
