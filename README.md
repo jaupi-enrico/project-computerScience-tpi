@@ -1,7 +1,7 @@
-# 🎟️ project-computerScience-tpi
+# 🎟️ Events — TPI Computer Science Project
 
-A **professional example repository** created for the **TPI** course (*Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni*).  
-This project demonstrates **how to plan, document, and present** a complete computer science project — in this case, a **web and mobile app for managing events** — using **Figma** and structured documentation.
+A **complete educational project** for the **TPI course** (*Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni*), showcasing the full development lifecycle of a **web and mobile event management platform**.  
+Designed using **Figma** and documented as a **professional IT project**.
 
 ---
 
@@ -44,23 +44,24 @@ Key features:
 
 ```
 project-computerScience-tpi/
-├── docs/                # Reports, project specifications, diagrams
-│   ├── requirements.docx  # Functional and technical requirements
-│   ├── design-notes.docx  # Initial notes from talking to the client
-│   └── report.docx       # Final report
-├── design/              # Figma exports and assets
-│   ├── wireframes/      
+├── docs/                 # Documentation, reports, and technical diagrams
+│   ├── requirements.docx   # Functional and technical requirements
+│   ├── design-notes.docx   # Client meeting notes and analysis
+│   └── report.docx         # Final project report
+├── design/               # UI/UX assets and Figma exports
+│   ├── wireframes/
 │   ├── prototypes/
 │   └── styleguide/
-├── src/                 # Code structure
-│   ├── node_modules/  # Includes all node modules that the app uses for the app without an internet connection
-│   ├── public/  # HTML and JS files + Icon
-│   ├── event.json # Database of all the events
+├── src/                  # Source code
+│   ├── public/            # HTML, JS, and static assets
+│   ├── event.json         # Event database
+│   ├── package.json       # Project configuration
 │   ├── package-lock.json
-│   ├── package.json # Details of the project
-│   └── main.js       # Nodejs file to start the node server
+│   ├── main.js            # Node.js server entry point
+│   └── node_modules/      # Local dependencies
 ├── LICENSE           
 └── README.md            # This file
+⚠️ Note: node_modules/ is included only for offline demonstration purposes.
 ```
 
 ---
