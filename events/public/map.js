@@ -15,8 +15,8 @@ async function loadEvents() {
     // Funzione per aggiungere marker dinamici
     events.forEach(event => {
     // Usa coordinate x/y se presenti, altrimenti usa Brescia centro
-    const lat = event.y || 45.5416;
-    const lon = event.x || 10.2118;
+    const lat = event.x || 45.5416;
+    const lon = event.y || 10.2118;
 
     // Popup con dettagli dell'evento
     const popupContent = `

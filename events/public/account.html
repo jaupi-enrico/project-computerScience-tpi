@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eventi a Brescia – Account</title>
+  <title>Eventi a Brescia - Account</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="icon.png">
@@ -29,6 +29,11 @@
       margin: 0 10px;
       cursor: pointer;
       filter: brightness(0.9);
+      transition: transform 0.2s;
+    }
+
+    .account-icons img:hover {
+      transform: scale(1.1);
     }
 
     .account-icons {
@@ -67,6 +72,66 @@
       color: #eee;
     }
 
+    /* Popup overlay */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Popup box */
+    .popup-box {
+      background: #1b1b1b;
+      border-radius: 15px;
+      width: 85%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      animation: slideUp 0.3s ease;
+    }
+
+    .popup-box h5 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .popup-box p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .close-popup {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .close-popup:hover {
+      background: #b02a37;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     /* Navbar inferiore */
     .bottom-nav {
       background-color: #1b1b1b;
@@ -92,7 +157,6 @@
     .bottom-nav a.active, .bottom-nav a:hover {
       color: #fff;
     }
-
   </style>
 </head>
 <body>
@@ -109,17 +173,41 @@
 
     <h6>I miei metodi di pagamento</h6>
     <div class="account-icons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="GPay">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Apple_Pay_logo.svg" alt="Apple Pay">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/640px-Google_Favicon_2025.svg.png" alt="GPay">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/PayPal_2024_%28Icon%29.svg/640px-PayPal_2024_%28Icon%29.svg.png" alt="PayPal">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/640px-Apple_logo_white.svg.png" alt="Apple Pay">
     </div>
 
     <h6>Impostazioni generali</h6>
-    <div class="setting-item"><i class="bi bi-question-circle"></i><span>Assistenza / help</span></div>
-    <div class="setting-item"><i class="bi bi-gear"></i><span>Impostazioni</span></div>
-    <div class="setting-item"><i class="bi bi-shield-lock"></i><span>Privacy e copyright</span></div>
-    <div class="setting-item"><i class="bi bi-key"></i><span>Sicurezza e password</span></div>
+    <div class="setting-item" data-title="Assistenza / help" data-text="Hai bisogno di aiuto? Contattaci all'indirizzo support@eventi-brescia.it o visita la sezione FAQ.">
+      <i class="bi bi-question-circle"></i><span>Assistenza / help</span>
+    </div>
 
+    <div class="setting-item" data-title="Impostazioni" data-text="Gestisci le tue preferenze, notifiche e lingua direttamente da questa sezione.">
+      <i class="bi bi-gear"></i><span>Impostazioni</span>
+    </div>
+
+    <div class="setting-item" data-title="Privacy e copyright" data-text="Consulta le nostre politiche sulla privacy, sui dati personali e sul copyright dei contenuti. (Abbiamo il diritto di prendere tutti i tuoi dati)">
+      <i class="bi bi-shield-lock"></i><span>Privacy e copyright</span>
+    </div>
+
+    <div class="setting-item" data-title="Sicurezza e password" data-text="Modifica la tua password, verifica l'accesso ai dispositivi e proteggi il tuo account.">
+      <i class="bi bi-key"></i><span>Sicurezza e password</span>
+    </div>
+
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h5 id="popup-title"></h5>
+      <p id="popup-text"></p>
+      <button class="close-popup" onclick="closePopup()">Chiudi</button>
+    </div>
+  </div>
+
+  <div class="container mt-4 mb-5">
+    <button class="btn btn-outline-danger w-100">Esci dal tuo account</button>
   </div>
 
   <!-- Navbar inferiore -->
@@ -129,6 +217,29 @@
     <a href="/ticket"><i class="bi bi-ticket-perforated"></i><span>biglietti</span></a>
     <a href="/account" class="active"><i class="bi bi-person-fill"></i><span>account</span></a>
   </nav>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const popupTitle = document.getElementById('popup-title');
+    const popupText = document.getElementById('popup-text');
+
+    document.querySelectorAll('.setting-item').forEach(item => {
+      item.addEventListener('click', () => {
+        popupTitle.textContent = item.getAttribute('data-title');
+        popupText.textContent = item.getAttribute('data-text');
+        popup.style.display = 'flex';
+      });
+    });
+
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+
+    // Chiudi popup cliccando fuori
+    popup.addEventListener('click', e => {
+      if (e.target === popup) closePopup();
+    });
+  </script>
 
 </body>
 </html>
