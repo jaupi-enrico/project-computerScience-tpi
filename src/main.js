@@ -2,13 +2,14 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
+import * as expressratelimit from "express-rate-limit";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-var RateLimit = require('express-rate-limit');
-var limiter = RateLimit({
+const rateLimit = expressratelimit.default;
+const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // max 100 requests per windowMs
 });
