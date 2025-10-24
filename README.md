@@ -50,9 +50,9 @@ project-computerScience-tpi/
 │ ├── design-notes.docx # Client meeting notes and analysis
 │ └── report.docx # Final project report
 ├── design/ # UI/UX assets and Figma exports
-│ ├── wireframes/
-│ ├── prototypes/
-│ └── styleguide/
+│ ├── wireframe/
+│ ├── mockup/
+│ └── presentation/
 ├── src/ # Source code
 │ ├── public/ # HTML, JS, and static assets
 │ ├── event.json # Event database
