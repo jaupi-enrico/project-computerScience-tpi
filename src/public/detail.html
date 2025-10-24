@@ -234,7 +234,12 @@ async function loadEvent() {
     document.getElementById("eventDate").textContent = event.date;
     document.getElementById("eventTime").textContent = event.time;
     document.getElementById("eventLocation").textContent = event.location;
-    document.getElementById("eventPrice").textContent = `€ ${event.price}`;
+    if(event.price == "Gratis") {
+      document.getElementById("eventPrice").textContent = `${event.price}`;
+    }
+    else {
+      document.getElementById("eventPrice").textContent = `€ ${event.price}`;
+    }
 
     // Preferiti
     const favBtn = document.getElementById("favoriteBtn");

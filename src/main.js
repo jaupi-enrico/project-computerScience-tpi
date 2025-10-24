@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const rateLimit = expressratelimit.default;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // max 100 requests per windowMs
+  max: 300, // max 100 requests per windowMs
 });
 
 app.use(limiter);

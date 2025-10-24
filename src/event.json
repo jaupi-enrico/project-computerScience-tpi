@@ -64,7 +64,7 @@
     "price": "Gratis",
     "imgUrl": "https://www.sudtirol.com/images/jch-optimize/ng/images_header_summer_mercatino-natale-bressanone.webp",
     "location": "Piazza della Loggia, Brescia",
-    "favorite": false,
+    "favorite": true,
     "bought": false,
     "x": 45.539712280208285,
     "y": 10.219574102205668
@@ -121,7 +121,7 @@
     "imgUrl": "https://www.asi.it/wp-content/uploads/2024/12/interstellar-web.jpg",
     "location": "Cinema Nuovo Eden, Via Nino Bixio 9, Brescia",
     "favorite": false,
-    "bought": false,
+    "bought": true,
     "x": 45.54451186905259,
     "y": 10.217327974773118
   },
