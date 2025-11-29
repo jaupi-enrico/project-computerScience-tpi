@@ -1,11 +1,11 @@
-# 🎟️ Events — TPI Computer Science Project
+# Events — TPI Computer Science Project
 
 A **complete educational project** for the **TPI course** (*Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni*), showcasing the full development lifecycle of a **web and mobile event management platform**.  
 Designed using **Figma** and documented as a **professional IT project**.
 
 ---
 
-## 📘 Overview
+## Overview
 
 This repository was developed as an **educational exercise** to simulate the creation of a **real-world software project**, focusing on:
 - Project planning and documentation  
@@ -17,13 +17,13 @@ The project follows the same organization and documentation style used in real d
 
 ---
 
-## 🎯 Project Concept
+## Project Concept
 
 **Project name:** *Events*
 **Type:** Web application  
 **Purpose:** To allow users to discover, organize, and manage local or global events through an intuitive digital platform.  
 
-### 🔑 Key Features
+### Key Features
 - Event creation, browsing, and management  
 - User authentication and profile concept design  
 - Responsive layout for web and mobile  
@@ -31,7 +31,7 @@ The project follows the same organization and documentation style used in real d
 
 ---
 
-## 🧩 Key Learning Points
+## Key Learning Points
 
 - Structuring a **professional IT project** repository
 - Documenting requirements, design choices, and workflows  
@@ -41,7 +41,7 @@ The project follows the same organization and documentation style used in real d
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 project-computerScience-tpi/
@@ -67,7 +67,7 @@ project-computerScience-tpi/
 
 ---
 
-## 🎨 Design & Tools
+## Design & Tools
 
 | Tool | Purpose |
 |------|----------|
@@ -79,7 +79,7 @@ project-computerScience-tpi/
 
 ---
 
-## 🚀 Usage
+## Usage
 
 1. Clone the repository:
    ```bash
@@ -93,7 +93,7 @@ project-computerScience-tpi/
 
 ---
 
-## 📄 Documentation Includes
+## Documentation Includes
 
 - **Project Proposal** – Concept and objectives  
 - **Requirements Analysis** – Functional and non-functional requirements  
@@ -103,7 +103,7 @@ project-computerScience-tpi/
 
 ---
 
-## 🎓 Educational Objectives
+## Educational Objectives
 
 - Learn how to structure and document a realistic software project  
 - Understand the stages of software design (from idea to development)  
@@ -112,18 +112,18 @@ project-computerScience-tpi/
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 | Name | Role |
 |------|------|
 | **Enrico Jaupi** | Main Developer & Software Architect |
-| **Samuele Gaburri** | Project Manager & UI Designer |
-| **Davide Albo** | UI/UX Designer |
-| **Kevin Musaku** | Analyst |
-| **Ignat Topala** | Analyst |
+| **Person1** | Project Manager & UI Designer |
+| **Person2** | UI/UX Designer |
+| **Person3** | Analyst |
+| **Person4** | Analyst |
 
-📍 ITIS Castelli – Informatics Department  
-📧 [dev.enricojaupi@gmail.com]  
+ITIS Castelli – Informatics Department  
+[dev.enricojaupi@gmail.com]  
 
 ---
 
