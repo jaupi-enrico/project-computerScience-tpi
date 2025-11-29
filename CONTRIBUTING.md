@@ -4,7 +4,7 @@ Thank you for your interest in contributing to **Events**, a web platform for ma
 We appreciate your help in improving the project — whether through reporting bugs, suggesting features, or contributing code.
 
 
-## 🧭 How to Contribute
+## How to Contribute
 
 ### Reporting Issues
 If you find a bug, inconsistency, or have a feature suggestion:
